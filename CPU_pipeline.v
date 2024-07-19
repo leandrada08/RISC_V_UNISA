@@ -1,10 +1,12 @@
 module CPU_pipeline (
     input           clk,
     input           reset,
+    input           select_out,
     
     // Salidas mínimas necesarias
-    output [31:0]   pc,          // Contador de programa
-    output [31:0]   alu_result   // Resultado de la ALU
+    // output [31:0]   pc,          // Contador de programa
+    // output [31:0]   alu_result   // Resultado de la ALU
+    output [31:0]   out_data
 );
 
     // Señales de la etapa IF
@@ -16,7 +18,7 @@ module CPU_pipeline (
 
     // Señales del pipeline IF/ID
     reg [31:0]      ifid_instruccion;
-    reg [30:0]      ifid_address;
+    reg [31:0]      ifid_address;
 
     // Señales de la etapa ID
     wire [31:0]     id_register1;
@@ -86,8 +88,8 @@ module CPU_pipeline (
     wire [31:0]     wb_WriteData;
 
     // Asignaciones a las salidas
-    assign pc = ifid_address;
-    assign alu_result = exmem_ALUResult;
+    // assign pc = ifid_address;
+    // assign alu_result = exmem_ALUResult;
 
     // Etapa IF
     IF if_stage (
@@ -103,7 +105,7 @@ module CPU_pipeline (
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             ifid_instruccion <= 32'b0;
-            ifid_address <= 31'b0;
+            ifid_address <= 32'b0;
         end else begin
             ifid_instruccion <= if_instruccion;
             ifid_address <= if_address;
@@ -256,6 +258,15 @@ module CPU_pipeline (
         .B(memwb_ReadData),
         .select(memwb_MemToReg),
         .C(wb_WriteData)
+    );
+
+
+    // Etapa Output
+    MUX32 out_mux (
+        .A(ifid_address),
+        .B(exmem_ALUResult),
+        .select(select_out),
+        .C(out_data)
     );
 
 endmodule
