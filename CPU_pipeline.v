@@ -2,10 +2,6 @@ module CPU_pipeline (
     input           clk,
     input           reset,
     input           select_out,
-    
-    // Salidas mínimas necesarias
-    // output [31:0]   pc,          // Contador de programa
-    // output [31:0]   alu_result   // Resultado de la ALU
     output [31:0]   out_data
 );
 
@@ -91,19 +87,29 @@ module CPU_pipeline (
     // assign pc = ifid_address;
     // assign alu_result = exmem_ALUResult;
 
+    // VIO e ILA
+        // Salidas de VIO
+    wire reset_from_vio;
+    wire select_out_from_vio;
+    wire sel_mux;
+
+        // Señales internas
+    wire reset_a;
+    wire select_out_a;
+
     // Etapa IF
     IF if_stage (
         .o_address(if_address),
         .o_instruccion(if_instruccion),
         .i_branch_address(exmem_PCBranch),
-        .i_reset(reset),
+        .i_reset(reset_a),
         .i_select(mem_PCSrc),
         .i_clock(clk)
     );
 
     // Pipeline IF/ID
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge reset_a) begin
+        if (reset_a) begin
             ifid_instruccion <= 32'b0;
             ifid_address <= 32'b0;
         end else begin
@@ -115,7 +121,7 @@ module CPU_pipeline (
     // Etapa ID
     ID id_stage (
         .i_clk(clk),
-        .i_reset(reset),
+        .i_reset(reset_a),
         .i_instruccion(ifid_instruccion),
         .i_WriteData(wb_WriteData),
         .i_RegWrite(memwb_RegWrite),
@@ -136,8 +142,8 @@ module CPU_pipeline (
     );
 
     // Pipeline ID/EX
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge reset_a) begin
+        if (reset_a) begin
             idex_PC <= 32'b0;
             idex_register1 <= 32'b0;
             idex_register2 <= 32'b0;
@@ -185,8 +191,8 @@ module CPU_pipeline (
     );
 
     // Pipeline EX/MEM
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge reset_a) begin
+        if (reset_a) begin
             exmem_ALUResult <= 32'b0;
             exmem_register2 <= 32'b0;
             exmem_PCBranch <= 32'b0;
@@ -220,7 +226,7 @@ module CPU_pipeline (
     // Etapa MEM
     MEM mem_stage (
         .i_clk(clk),
-        .i_reset(reset),
+        .i_reset(reset_a),
         .i_Address(exmem_ALUResult),
         .i_WriteData(exmem_register2),
         .i_BranchOp(exmem_BranchOp),
@@ -236,8 +242,8 @@ module CPU_pipeline (
     );
 
     // Pipeline MEM/WB
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
+    always @(posedge clk or posedge reset_a) begin
+        if (reset_a) begin
             memwb_ALUResult <= 32'b0;
             memwb_ReadData <= 32'b0;
             memwb_MemToReg <= 1'b0;
@@ -260,14 +266,34 @@ module CPU_pipeline (
         .C(wb_WriteData)
     );
 
-
     // Etapa Output
     MUX32 out_mux (
         .A(ifid_address),
         .B(exmem_ALUResult),
-        .select(select_out),
+        .select(select_out_a),
         .C(out_data)
     );
 
+
+    vio u_vio (
+        .clk_0       (clk),
+        .probe_in0_0 (out_data),
+        .probe_out0_0(reset_from_vio),
+        .probe_out1_0(select_out_from_vio),
+        .probe_out2_0(sel_mux)
+    );
+
+    ila u_ila (
+        .clk_0    (clk),
+        .probe0_0 (reset_a),
+        .probe1_0 (select_out_a),
+        .probe2_0 (out_data)
+    );
+
+    // Mux para seleccionar entre VIO y entradas reales
+    assign reset_a = (sel_mux) ? reset_from_vio : reset;
+    assign select_out_a = (sel_mux) ? select_out_from_vio : select_out;
+
 endmodule
+
 
