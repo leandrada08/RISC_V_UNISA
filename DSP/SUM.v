@@ -1,7 +1,27 @@
+`timescale 1ns / 1ps
+
 module SUM (
-    input [31:0] a,
-    input [31:0] b,
-    output [31:0] sum
+    input signed [31:0] a,  // Entrada signed
+    input signed [31:0] b,  // Entrada signed
+    output signed [31:0] sum   // Salida signed con saturación
 );
-    assign sum = a + b;
+
+    localparam NB_DATA      =   32;
+    localparam NBF_DATA     =   16;
+    localparam NBI_DATA     =   NB_DATA - NBF_DATA - 1;
+
+    localparam NB_RESULT    =   33;
+    localparam NBF_RESULT   =   16;
+    localparam NBI_RESULT   =   NB_RESULT - NBF_RESULT - 1;
+
+    localparam NB_SAT       =   NBI_RESULT - NBI_DATA;
+    localparam NB_TRUC      =   NBF_RESULT - NBF_DATA;
+
+    wire signed [32:0] sum_aux;
+
+    assign sum_aux = a + b;
+
+    assign sum =    ( ~|sum_aux[NB_RESULT-1 -: NB_SAT+1] || &sum_aux[NB_RESULT-1 -: NB_SAT+1]) ? sum_aux[NB_RESULT- NB_SAT - 1 -: NB_DATA] :
+                    (sum_aux[NB_RESULT-1]) ? {{1'b1},{NB_DATA-1{1'b0}}} : {{1'b0},{NB_DATA-1{1'b1}}};
 endmodule
+
