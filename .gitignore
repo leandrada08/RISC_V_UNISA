@@ -24,6 +24,9 @@
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+!LICENSE
+!README.md
+
 # Local History for Visual Studio Code
 .history/
 

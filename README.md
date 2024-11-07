@@ -1,9 +1,10 @@
 
-# Proyecto CPU con ISA RISC-V (32 bits)
+# Proyecto CPU ISA RISC-V  con bloque DSP(32 bits)
 
 Este proyecto es una implementación de un CPU basado en la arquitectura **RISC-V** de 32 bits, desarrollado utilizando la técnica de **pipeline** con 5 etapas. El código fue escrito en **Verilog** y **SystemVerilog**, y se utilizó la herramienta **Vivado** para la síntesis y simulación.
-<img width="1349" alt="Captura de pantalla 2024-09-09 a las 12 19 06 p  m" src="https://github.com/user-attachments/assets/20c905fd-2acf-409f-8002-af543b20aee2">
+Tambien se realizo un bloque DSP bastante simple que solo realiza algunas operaciones vectoriales.
 
+# CPU
 ## Descripción
 
 Este CPU fue diseñado para soportar un subconjunto de las instrucciones de RISC-V, con un enfoque en la modularidad y la reutilización de componentes comunes. Las 5 etapas del pipeline son:
@@ -56,10 +57,13 @@ El proyecto está organizado de la siguiente manera:
 
 ## Pruebas
 
-El diseño y pruebas del proyecto fueron realizadas con TDD
+El diseño y pruebas del proyecto fueron realizadas con TDD para ayduar en la escritura del proyecto y para simplificar la tarea de analisis de señales temporales en vivado.
+
 
 
 ## Licencia
 
 Este proyecto es de código abierto bajo la **Licencia MIT**. Esto significa que puedes usar, modificar y distribuir este código sin restricciones, siempre y cuando des crédito al autor original.
 
+# Descripcion completa
+Si buscas una descripcion teorica y practica mas completa de como se hizo esto podes hacerlo en mi pagina web: https://leandrada08.github.io/SocialLuis/Notas-Silo/Proyectos/CPU-ISA-RISC-V-+-DSP-Digitali-UNISA
