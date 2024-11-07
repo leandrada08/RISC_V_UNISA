@@ -1,11 +1,10 @@
-`include "C:\Users\leand\Documentos\Codigos\DigitaliUNISA\Proggeti_Digitali_UNISA\ID\RISCV.sv"
 
 
 module MUX32 (
-  input wire [`WIDTH-1:0] A,
-  input wire [`WIDTH-1:0] B,
+  input wire [31:0] A,
+  input wire [31:0] B,
   input wire select,
-  output wire [`WIDTH-1:0] C
+  output wire [31:0] C
 );
 
 

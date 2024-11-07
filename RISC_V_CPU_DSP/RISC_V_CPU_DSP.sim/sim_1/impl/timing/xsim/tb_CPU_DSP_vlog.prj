@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242" --include "../../../../../../ID" \
+"tb_CPU_DSP_time_impl.v" \
+
+sv xil_defaultlib  --include "../../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242" --include "../../../../../../ID" \
+"../../../../../../tb_CPU_DSP.sv" \
+
+# Do not sort compile order
+nosort

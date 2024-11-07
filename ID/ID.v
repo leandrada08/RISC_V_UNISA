@@ -4,13 +4,13 @@
     input               i_reset,  // Añadimos la señal de reset
     input [31:0]  i_instruccion,
     input [31:0]  i_WriteData,
-    input               i_RegWrite,
-    input [4:0]    i_WriteReg,
+    input         i_RegWrite,
+    input [4:0]   i_WriteReg,
 
     output[31:0]  o_register1,
     output[31:0]  o_register2,
     output[31:0]  o_constante,
-    output[4:0]    o_WriteReg,
+    output[4:0]   o_WriteReg,
 
     output              o_RegWrite,
     output              o_ALUSrc,
@@ -22,18 +22,27 @@
     output              o_SLTc,
 
     output[2:0]         o_ALUControl,
-    output[1:0]         o_BranchOp
+    output[1:0]         o_BranchOp,
+
+    output              o_start_dsp,
+    output[1:0]         o_op_dsp,
+
+    output[4:0]         o_rs1,
+    output[4:0]         o_rs2
 );
 
     // Señales auxiliares de instrucción
     wire [4:0]    a_rs1;
     wire [4:0]    a_rs2;
-    wire [6 : 0]       a_op_code;
-    wire [1 : 0]       a_ALUOp;
+    wire [6:0]    a_op_code;
+    wire [2:0]    a_ALUOp;
 
+    assign o_rs1 = a_rs1;
+    assign o_rs2 = a_rs2;  
     assign a_rs1 = i_instruccion[19:15];
     assign a_rs2 = i_instruccion[24:20];
     assign a_op_code = i_instruccion[6:0];
+    assign o_start_dsp = a_ALUOp[2];
 
     GENERADOR_CONSTANTE u_GENERADOR_CONSTANTE (
         .instruccion(i_instruccion),
@@ -69,9 +78,11 @@
         .funct7(i_instruccion[31:25]),
         .ALUControl(o_ALUControl),
         .BranchOp(o_BranchOp),
-        .SLTc(o_SLTc)
+        .SLTc(o_SLTc),
+        .op_dsp(o_op_dsp)
     );
 
     assign o_WriteReg = i_instruccion[11:7];
 
 endmodule
+

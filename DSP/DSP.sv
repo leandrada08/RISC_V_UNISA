@@ -16,12 +16,15 @@ module DSP (
 );
 
     reg [2:0] state, next_state;   // Estados actuales y siguientes del FSM
-    reg [3:0] index, k;            // Contadores de índices
+    (* max_fanout = 32 *)reg [3:0] index;
+    (* max_fanout = 32 *)reg [3:0] k;            // Contadores de índices
     reg [31:0] acc;                // Acumulador para la operación FIR
     reg [31:0] a_ext[11:0];        // Coeficientes extendidos
     reg [31:0] x_ext[11:0];        // Señal extendida
     reg [31:0] mult_reg_aux;    // Registro auxuiliar para dividir el camino critico en el filtrado   
+    reg [1:0]  operation_aux;
 
+    
 
     wire [31:0] sum, mult, diff; // Resultados intermedios de las operaciones
     wire [31:0] a_bus, b_bus;    // Buses para las entradas de las operaciones
@@ -60,7 +63,7 @@ module DSP (
                 next_state = EXECUTE; // Transición a EXECUTE
             end
             EXECUTE: begin
-                if ((operation != 2'b10 && index == 4'd8) || (operation == 2'b10 && k == 4'd12 && index == 4'd8))
+                if ((operation_aux != 2'b10 && index == 4'd7) || (operation_aux == 2'b10 && k == 4'd12 && index == 4'd7))
                     next_state = DONE; // Transición a DONE si se completan las operaciones
                 else
                     next_state = EXECUTE; // Permanecer en EXECUTE
@@ -73,8 +76,9 @@ module DSP (
     end
 
     // Lógica combinacional para a_bus y b_bus
-    assign a_bus = (operation == 2'b10) ? a_ext[index[2:0]] : A[index[2:0]]; // Selección de a_bus
-    assign b_bus = (operation == 2'b10) ? x_ext[k - index] : B[index[2:0]]; // Selección de b_bus
+    assign a_bus = (operation_aux == 2'b10) ? a_ext[index] : a_ext[index[2:0]]; // Selección de a_bus
+    assign b_bus = (operation_aux == 2'b10 && k >= index) ? x_ext[k - index] : 
+                   (operation_aux == 2'b10 && k < index)  ? 32'h00000000     :x_ext[index[2:0]]; // Selección de b_bus
 
     // Lógica de control de operaciones
     always @(posedge clk or posedge rst) begin
@@ -138,10 +142,11 @@ module DSP (
                     x_ext[5] <= B[5];
                     x_ext[6] <= B[6];
                     x_ext[7] <= B[7];
+                    operation_aux<= operation;
                 end
                 EXECUTE: begin
                     // Ejecución de las operaciones seleccionadas
-                    case (operation)
+                    case (operation_aux)
                         2'b00: begin // Suma
                             result[index[2:0]] <= sum;
                             index <= index + 1;
@@ -155,15 +160,13 @@ module DSP (
                             index <= index + 1;
                         end
                         2'b10: begin // Filtrado FIR
-                            if (index + 1 <= k) begin
+                            if (index <= k + 1) begin
                                 mult_reg_aux <= mult;
                                 acc <= acc + mult_reg_aux;
                                 index <= index + 1;
                             end else begin
                                 // Guardar solo los valores intermedios
-                                if (k <= 11) begin
-                                    result[k - 4] <= acc;
-                                end
+                                result[k - 4] <= acc;
                                 k <= k + 1;
                                 index <= 4'd0;
                                 acc <= 32'd0;
@@ -186,7 +189,24 @@ module DSP (
             endcase
         end
     end
+
+    
 endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,540 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Sep 23 15:32:49 2024
+# Process ID: 2568
+# Current directory: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1
+# Command line: vivado.exe -log CPU_DSP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU_DSP.tcl
+# Log file: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/CPU_DSP.vds
+# Journal file: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1\vivado.jou
+# Running On        :leandrada08
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Apple Part 000 r0p0
+# CPU Frequency     :2000 MHz
+# CPU Physical cores:5
+# CPU Logical cores :5
+# Host memory       :8584 MB
+# Swap memory       :4160 MB
+# Total Virtual     :12745 MB
+# Available Virtual :6437 MB
+#-----------------------------------------------------------
+source CPU_DSP.tcl -notrace
+create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 547.266 ; gain = 229.211
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.srcs/utils_1/imports/synth_1/CPU_DSP.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.srcs/utils_1/imports/synth_1/CPU_DSP.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top CPU_DSP -part xc7a35tcpg236-1 -global_retiming on
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Device 21-9227] Part: xc7a35tcpg236-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7548
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1438.160 ; gain = 447.672
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'reset', assumed default net type 'wire' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:64]
+INFO: [Synth 8-11241] undeclared symbol 'out_data', assumed default net type 'wire' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:99]
+INFO: [Synth 8-11241] undeclared symbol 'locked', assumed default net type 'wire' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:124]
+INFO: [Synth 8-11241] undeclared symbol 'select_out', assumed default net type 'wire' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:131]
+INFO: [Synth 8-11241] undeclared symbol 'sel_in', assumed default net type 'wire' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:140]
+INFO: [Synth 8-6157] synthesizing module 'CPU_DSP' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CPU_pipeline' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_pipeline.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IF' [C:/Users/leand/Desktop/RISC_V_UNISA/IF/IF.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MUX32' [C:/Users/leand/Desktop/RISC_V_UNISA/COMMON/MUX32.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MUX32' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/COMMON/MUX32.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ADD4' [C:/Users/leand/Desktop/RISC_V_UNISA/IF/ADD4.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'ADD4' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/IF/ADD4.v:2]
+INFO: [Synth 8-6157] synthesizing module 'PC' [C:/Users/leand/Desktop/RISC_V_UNISA/IF/PC.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/IF/PC.v:1]
+INFO: [Synth 8-6157] synthesizing module 'MEM_INST' [C:/Users/leand/Desktop/RISC_V_UNISA/IF/MEM_INST.v:3]
+INFO: [Synth 8-3876] $readmem data file 'mem.mem' is read successfully [C:/Users/leand/Desktop/RISC_V_UNISA/IF/MEM_INST.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_INST' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/IF/MEM_INST.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'IF' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/IF/IF.v:1]
+WARNING: [Synth 8-689] width (31) of port connection 'o_address' does not match port width (32) of module 'IF' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_pipeline.v:118]
+INFO: [Synth 8-6157] synthesizing module 'ID' [C:/Users/leand/Desktop/RISC_V_UNISA/ID/ID.v:2]
+INFO: [Synth 8-6157] synthesizing module 'GENERADOR_CONSTANTE' [C:/Users/leand/Desktop/RISC_V_UNISA/ID/GENERADOR_CONSTANTE.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'GENERADOR_CONSTANTE' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/ID/GENERADOR_CONSTANTE.v:2]
+INFO: [Synth 8-6157] synthesizing module 'REGISTERS' [C:/Users/leand/Desktop/RISC_V_UNISA/ID/REGISTERS.v:3]
+INFO: [Synth 8-226] default block is never used [C:/Users/leand/Desktop/RISC_V_UNISA/ID/REGISTERS.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'REGISTERS' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/ID/REGISTERS.v:3]
+INFO: [Synth 8-6157] synthesizing module 'CONTROL' [C:/Users/leand/Desktop/RISC_V_UNISA/ID/CONTROL.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'CONTROL' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/ID/CONTROL.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ALU_CONTROL' [C:/Users/leand/Desktop/RISC_V_UNISA/ID/ALU_CONTROL.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_CONTROL' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/ID/ALU_CONTROL.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ID' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/ID/ID.v:2]
+INFO: [Synth 8-6157] synthesizing module 'EX' [C:/Users/leand/Desktop/RISC_V_UNISA/EX/EX.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/leand/Desktop/RISC_V_UNISA/EX/ALU.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/EX/ALU.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'ADD' [C:/Users/leand/Desktop/RISC_V_UNISA/EX/ADD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ADD' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/EX/ADD.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'EX' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/EX/EX.v:2]
+INFO: [Synth 8-6157] synthesizing module 'MEM' [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/MEM.v:4]
+INFO: [Synth 8-6157] synthesizing module 'BRANCH' [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/BRANCH.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BRANCH' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/BRANCH.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MEM_DATA' [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/MEM_DATA.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_DATA' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/MEM_DATA.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'MEM' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/MEM.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'CPU_pipeline' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_pipeline.v:1]
+INFO: [Synth 8-6157] synthesizing module 'DSP' [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'SUM' [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/SUM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SUM' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/SUM.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MULT' [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/MULT.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'MULT' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/MULT.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SUB' [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/SUB.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SUB' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/SUB.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'DSP' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'MEM_DSP' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP/MEM_DSP.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_DSP' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP/MEM_DSP.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'clk_mmcm' [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/synth/clk_mmcm.v:13]
+INFO: [Synth 8-6157] synthesizing module 'clk_mmcm_clk_wiz_0_0' [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/clk_mmcm_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_mmcm_clk_wiz_0_0' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/clk_mmcm_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_mmcm' (0#1) [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/synth/clk_mmcm.v:13]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:129]
+INFO: [Synth 8-6157] synthesizing module 'ila' [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/synth/ila.v:13]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/synth/ila.v:29]
+INFO: [Synth 8-6157] synthesizing module 'ila_ila_0_0' [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/ila_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_ila_0_0' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/ila_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila' (0#1) [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/synth/ila.v:13]
+WARNING: [Synth 8-689] width (1) of port connection 'probe0_0' does not match port width (4) of module 'ila' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:131]
+WARNING: [Synth 8-689] width (1) of port connection 'probe1_0' does not match port width (32) of module 'ila' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:132]
+INFO: [Synth 8-6157] synthesizing module 'vio' [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/vio/synth/vio.v:13]
+INFO: [Synth 8-6157] synthesizing module 'vio_vio_0_0' [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/vio_vio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vio_vio_0_0' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/.Xil/Vivado-2568-leandrada08/realtime/vio_vio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vio' (0#1) [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/vio/synth/vio.v:13]
+WARNING: [Synth 8-689] width (1) of port connection 'probe_in0_0' does not match port width (32) of module 'vio' [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:137]
+INFO: [Synth 8-6155] done synthesizing module 'CPU_DSP' (0#1) [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:1]
+WARNING: [Synth 8-7137] Register data_reg[3327] in module MEM_DATA has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/MEM/MEM_DATA.v:22]
+WARNING: [Synth 8-7137] Register operation_aux_reg in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:79]
+WARNING: [Synth 8-7137] Register result_reg[7] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[6] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[5] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[4] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[3] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[2] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[1] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+WARNING: [Synth 8-7137] Register result_reg[0] in module DSP has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/leand/Desktop/RISC_V_UNISA/DSP/DSP.sv:151]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/synth/ila.v:29]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'vio_0'. This will prevent further optimization [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/vio/synth/vio.v:37]
+WARNING: [Synth 8-3848] Net o_out_data in module/entity CPU_DSP does not have driver. [C:/Users/leand/Desktop/RISC_V_UNISA/CPU_DSP.sv:5]
+WARNING: [Synth 8-7129] Port instruccion[19] in module GENERADOR_CONSTANTE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruccion[18] in module GENERADOR_CONSTANTE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruccion[17] in module GENERADOR_CONSTANTE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruccion[16] in module GENERADOR_CONSTANTE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruccion[15] in module GENERADOR_CONSTANTE is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[31] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[30] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[29] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[28] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[27] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[26] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[25] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[24] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[23] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[22] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[21] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[20] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[19] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[18] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[17] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[16] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[15] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[14] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[13] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[12] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[11] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[10] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[9] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[8] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[7] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[6] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[5] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[4] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[3] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[2] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[1] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[0] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[3] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[2] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[1] in module CPU_DSP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1608.289 ; gain = 617.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1608.289 ; gain = 617.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1608.289 ; gain = 617.801
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.416 . Memory (MB): peak = 1608.289 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/vio/ip/vio_vio_0_0_1/vio_vio_0_0/vio_vio_0_0_in_context.xdc] for cell 'u_vio/vio_0'
+Finished Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/vio/ip/vio_vio_0_0_1/vio_vio_0_0/vio_vio_0_0_in_context.xdc] for cell 'u_vio/vio_0'
+Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/ip/ila_ila_0_0/ila_ila_0_0/ila_ila_0_0_in_context.xdc] for cell 'u_ila/ila_0'
+Finished Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/ila/ip/ila_ila_0_0/ila_ila_0_0/ila_ila_0_0_in_context.xdc] for cell 'u_ila/ila_0'
+Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0/clk_mmcm_clk_wiz_0_0_in_context.xdc] for cell 'MMCM/clk_wiz_0'
+Finished Parsing XDC File [c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0/clk_mmcm_clk_wiz_0_0_in_context.xdc] for cell 'MMCM/clk_wiz_0'
+Parsing XDC File [C:/Users/leand/Desktop/RISC_V_UNISA/Arty-A7-35-Master.xdc]
+Finished Parsing XDC File [C:/Users/leand/Desktop/RISC_V_UNISA/Arty-A7-35-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/leand/Desktop/RISC_V_UNISA/Arty-A7-35-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CPU_DSP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CPU_DSP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1710.547 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.172 . Memory (MB): peak = 1710.547 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0/clk_mmcm_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  c:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0/clk_mmcm_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for u_vio. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_vio/vio_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for u_ila/ila_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MMCM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for MMCM/clk_wiz_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DSP'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                              000
+                    LOAD |                               01 |                              001
+                 EXECUTE |                               10 |                              010
+                    DONE |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'DSP'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   2 Input   48 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 1     
+	   3 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 4     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   3 Input    4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 366   
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   3 Input   48 Bit        Muxes := 1     
+	   2 Input   48 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 37    
+	  98 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 2     
+	   4 Input   32 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 9     
+	   2 Input    2 Bit        Muxes := 3     
+	   5 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 44    
+	  32 Input    1 Bit        Muxes := 32    
+	   4 Input    1 Bit        Muxes := 24    
+	   8 Input    1 Bit        Muxes := 25    
+	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mult_aux, operation Mode is: A*B.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: Generating DSP mult_aux, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: Generating DSP mult_aux, operation Mode is: A*B.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: Generating DSP mult_aux, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+DSP Report: operator mult_aux is absorbed into DSP mult_aux.
+WARNING: [Synth 8-7129] Port o_out_data[31] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[30] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[29] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[28] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[27] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[26] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[25] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[24] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[23] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[22] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[21] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[20] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[19] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[18] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[17] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[16] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[15] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[14] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[13] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[12] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[11] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[10] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[9] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[8] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[7] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[6] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[5] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[4] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[3] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[2] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[1] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_out_data[0] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[3] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[2] in module CPU_DSP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_select_out[1] in module CPU_DSP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:05 ; elapsed = 00:02:13 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+ Sort Area is CPU_DSP__GC0 mult_aux_0 : 0 0 : 2701 4861 : Used 1 time 0
+ Sort Area is CPU_DSP__GC0 mult_aux_0 : 0 1 : 2160 4861 : Used 1 time 0
+ Sort Area is CPU_DSP__GC0 mult_aux_3 : 0 0 : 2158 3958 : Used 1 time 0
+ Sort Area is CPU_DSP__GC0 mult_aux_3 : 0 1 : 1800 3958 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|MULT        | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULT        | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULT        | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MULT        | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:40 ; elapsed = 00:02:50 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:50 ; elapsed = 00:03:00 . Memory (MB): peak = 1710.547 ; gain = 720.059
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `clk_mmcm`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `clk_mmcm' done
+
+
+INFO: [Synth 8-5816] Retiming module `ila`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `ila' done
+
+
+INFO: [Synth 8-5816] Retiming module `vio`
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `vio' done
+
+
+INFO: [Synth 8-5816] Retiming module `CPU_DSP`
+  9094 registers are not movable due to multiple clocks detected on the clock pin of these registers
+	Numbers of forward move = 0, and backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `CPU_DSP' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:03:30 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (dsp_core/FSM_sequential_state_reg[1]) is unused and will be removed from module CPU_DSP.
+WARNING: [Synth 8-3332] Sequential element (dsp_core/FSM_sequential_state_reg[0]_inv) is unused and will be removed from module CPU_DSP.
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:32 ; elapsed = 00:03:43 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:32 ; elapsed = 00:03:43 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:35 ; elapsed = 00:03:46 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:35 ; elapsed = 00:03:46 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:35 ; elapsed = 00:03:46 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:35 ; elapsed = 00:03:46 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------+----------+
+|      |BlackBox name        |Instances |
++------+---------------------+----------+
+|1     |clk_mmcm_clk_wiz_0_0 |         1|
+|2     |ila_ila_0_0          |         1|
+|3     |vio_vio_0_0          |         1|
++------+---------------------+----------+
+
+Report Cell Usage: 
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |clk_mmcm_clk_wiz_0 |     1|
+|2     |ila_ila_0          |     1|
+|3     |vio_vio_0          |     1|
+|4     |CARRY4             |    32|
+|5     |LUT1               |    31|
+|6     |LUT2               |    52|
+|7     |LUT3               |   102|
+|8     |LUT4               |   101|
+|9     |LUT5               |   214|
+|10    |LUT6               |  2956|
+|11    |MUXF7              |  1156|
+|12    |MUXF8              |   544|
+|13    |FDCE               |  8658|
+|14    |FDRE               |   575|
+|15    |FDSE               |     1|
+|16    |IBUF               |     2|
+|17    |OBUFT              |    32|
++------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:36 ; elapsed = 00:03:46 . Memory (MB): peak = 1916.453 ; gain = 925.965
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 38 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:01 ; elapsed = 00:03:33 . Memory (MB): peak = 1916.453 ; gain = 823.707
+Synthesis Optimization Complete : Time (s): cpu = 00:03:36 ; elapsed = 00:03:47 . Memory (MB): peak = 1916.453 ; gain = 925.965
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.267 . Memory (MB): peak = 1916.453 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1732 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'CPU_DSP' is not ideal for floorplanning, since the cellview 'MEM_DATA' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1916.453 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 3fb24325
+INFO: [Common 17-83] Releasing license: Synthesis
+103 Infos, 96 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:02 ; elapsed = 00:04:17 . Memory (MB): peak = 1916.453 ; gain = 1318.406
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1916.453 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/synth_1/CPU_DSP.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file CPU_DSP_utilization_synth.rpt -pb CPU_DSP_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 23 15:37:40 2024...

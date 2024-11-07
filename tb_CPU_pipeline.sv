@@ -5,16 +5,19 @@ module tb_CPU_pipeline;
     // Señales
     reg clk;
     reg reset;
-    reg select_out;
-    wire [31:0] out_data;
-
+    wire [31:0] pc;
+    wire [31:0] alu_result;
+    wire        start_dsp;
+    wire [1:0]  op_dsp;
 
     // Instancia de la CPU
     CPU_pipeline uut (
         .clk(clk),
         .reset(reset),
-        .select_out(select_out),
-        .out_data(out_data)
+        .pc(pc),
+        .alu_result(alu_result),
+        .start_dsp(start_dsp),
+        .op_dsp(op_dsp)
     );
 
     // Generación de reloj
@@ -30,19 +33,9 @@ module tb_CPU_pipeline;
         reset = 1;  // Activar reset
         #10;
         reset = 0;  // Desactivar reset
-        select_out = 0;
-        #200;
-        select_out = 1;
-        #200;
-        select_out = 0;
-        #200;
-        select_out = 1;
-        #200;
-        select_out = 0;
-        #200;
-        select_out = 1;
-        #200;
-        select_out = 0;
+
+        // Simulación de la CPU por 1000ns
+        #1000;
 
         // Finalizar la simulación
         $finish;
@@ -50,7 +43,8 @@ module tb_CPU_pipeline;
 
     // Monitoreo de las señales
     initial begin
-        $monitor("Time: %0t | Reset: %0b | Select: %0b | out_data: %h ", $time, reset, select_out, out_data);
+        $monitor("Time: %0t | Reset: %0b | PC: %h | ALU Result: %h", $time, reset, pc, alu_result);
     end
 
 endmodule
+

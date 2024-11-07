@@ -1,0 +1,37 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242" --include "../../../../../ID" \
+"../../../../RISC_V_CPU_DSP.ip_user_files/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0_clk_wiz.v" \
+"../../../../RISC_V_CPU_DSP.ip_user_files/bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0.v" \
+"../../../../RISC_V_CPU_DSP.ip_user_files/bd/clk_mmcm/sim/clk_mmcm.v" \
+"../../../../../EX/ADD.v" \
+"../../../../../IF/ADD4.v" \
+"../../../../../ID/ALU_CONTROL.v" \
+"../../../../../MEM/BRANCH.v" \
+"../../../../../ID/CONTROL.v" \
+"../../../../../CPU_pipeline.v" \
+"../../../../../EX/EX.v" \
+"../../../../../ID/GENERADOR_CONSTANTE.v" \
+"../../../../../ID/ID.v" \
+"../../../../../IF/IF.v" \
+"../../../../../MEM/MEM.v" \
+"../../../../../MEM/MEM_DATA.v" \
+"../../../../../IF/MEM_INST.v" \
+"../../../../../DSP/MULT.v" \
+"../../../../../COMMON/MUX32.v" \
+"../../../../../IF/PC.v" \
+"../../../../../ID/REGISTERS.v" \
+"../../../../../DSP/SUB.v" \
+"../../../../../DSP/SUM.v" \
+
+sv xil_defaultlib  --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242" --include "../../../../../ID" \
+"../../../../../EX/ALU.sv" \
+"../../../../../CPU_DSP.sv" \
+"../../../../../DSP/DSP.sv" \
+"../../../../../CPU_DSP/MEM_DSP.sv" \
+"../../../../../tb_CPU_DSP.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

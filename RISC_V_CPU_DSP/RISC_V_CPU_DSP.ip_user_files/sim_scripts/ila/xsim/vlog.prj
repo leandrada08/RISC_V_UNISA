@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/ila/ipshared/814a/hdl/verilog" --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/ila/ipshared/1017/hdl/verilog" --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/ila/ipshared/8745/hdl/verilog" --include "../../../../RISC_V_CPU_DSP.gen/sources_1/bd/ila/ipshared/2340/hdl/verilog" \
+"../../../bd/ila/ip/ila_ila_0_0/sim/ila_ila_0_0.v" \
+"../../../bd/ila/sim/ila.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

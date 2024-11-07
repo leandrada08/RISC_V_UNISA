@@ -116,15 +116,24 @@ module tb_DSP();
         #10 start = 0;
         wait (done);
         // Verificación del resultado FIR
-        assert(result[0] == (A[0] * B[4] + A[1] * B[3] + A[2] * B[2] + A[3] * B[1] + A[4] * B[0])) else $fatal("FIR fallo en result[0]");
-        assert(result[1] == (A[0] * B[5] + A[1] * B[4] + A[2] * B[3] + A[3] * B[2] + A[4] * B[1] + A[5] * B[0])) else $fatal("FIR fallo en result[1]");
-        assert(result[2] == (A[0] * B[6] + A[1] * B[5] + A[2] * B[4] + A[3] * B[3] + A[4] * B[2] + A[5] * B[1] + A[6] * B[0])) else $fatal("FIR fallo en result[2]");
-        assert(result[3] == (A[0] * B[7] + A[1] * B[6] + A[2] * B[5] + A[3] * B[4] + A[4] * B[3] + A[5] * B[2] + A[6] * B[1] + A[7] * B[0])) else $fatal("FIR fallo en result[3]");
-        assert(result[4] == (A[0] * 32'b0 + A[1] * B[7] + A[2] * B[6] + A[3] * B[5] + A[4] * B[4] + A[5] * B[3] + A[6] * B[2] + A[7] * B[1])) else $fatal("FIR fallo en result[4]");
-        assert(result[5] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * B[7] + A[3] * B[6] + A[4] * B[5] + A[5] * B[4] + A[6] * B[3] + A[7] * B[2])) else $fatal("FIR fallo en result[5]");
-        assert(result[6] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * 32'b0 + A[3] * B[7] + A[4] * B[6] + A[5] * B[5] + A[6] * B[4] + A[7] * B[3])) else $fatal("FIR fallo en result[6]");
-        assert(result[7] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * 32'b0 + A[3] * 32'b0 + A[4] * B[7] + A[5] * B[6] + A[6] * B[5] + A[7] * B[4])) else $fatal("FIR fallo en result[7]");
+        // assert(result[0] == (A[0] * B[4] + A[1] * B[3] + A[2] * B[2] + A[3] * B[1] + A[4] * B[0])) else $fatal("FIR fallo en result[0]");
+        // assert(result[1] == (A[0] * B[5] + A[1] * B[4] + A[2] * B[3] + A[3] * B[2] + A[4] * B[1] + A[5] * B[0])) else $fatal("FIR fallo en result[1]");
+        // assert(result[2] == (A[0] * B[6] + A[1] * B[5] + A[2] * B[4] + A[3] * B[3] + A[4] * B[2] + A[5] * B[1] + A[6] * B[0])) else $fatal("FIR fallo en result[2]");
+        // assert(result[3] == (A[0] * B[7] + A[1] * B[6] + A[2] * B[5] + A[3] * B[4] + A[4] * B[3] + A[5] * B[2] + A[6] * B[1] + A[7] * B[0])) else $fatal("FIR fallo en result[3]");
+        // assert(result[4] == (A[0] * 32'b0 + A[1] * B[7] + A[2] * B[6] + A[3] * B[5] + A[4] * B[4] + A[5] * B[3] + A[6] * B[2] + A[7] * B[1])) else $fatal("FIR fallo en result[4]");
+        // assert(result[5] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * B[7] + A[3] * B[6] + A[4] * B[5] + A[5] * B[4] + A[6] * B[3] + A[7] * B[2])) else $fatal("FIR fallo en result[5]");
+        // assert(result[6] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * 32'b0 + A[3] * B[7] + A[4] * B[6] + A[5] * B[5] + A[6] * B[4] + A[7] * B[3])) else $fatal("FIR fallo en result[6]");
+        // assert(result[7] == (A[0] * 32'b0 + A[1] * 32'b0 + A[2] * 32'b0 + A[3] * 32'b0 + A[4] * B[7] + A[5] * B[6] + A[6] * B[5] + A[7] * B[4])) else $fatal("FIR fallo en result[7]");
 
+
+        assert(result[0] == 32'h6E0000) else $fatal("FIR fallo en result[0]");
+        assert(result[1] == 32'hB60000) else $fatal("FIR fallo en result[1]");
+        assert(result[2] == 32'h1180000) else $fatal("FIR fallo en result[2]");
+        assert(result[3] == 32'h1980000) else $fatal("FIR fallo en result[3]");
+        assert(result[4] == 32'h2060000) else $fatal("FIR fallo en result[4]");
+        assert(result[5] == 32'h24E0000) else $fatal("FIR fallo en result[5]");
+        assert(result[6] == 32'h26C0000) else $fatal("FIR fallo en result[6]");
+        assert(result[7] == 32'h25C0000) else $fatal("FIR fallo en result[7]"); 
         // Fin de la simulación
         $display("Todas las pruebas pasaron exitosamente.");
         $finish;

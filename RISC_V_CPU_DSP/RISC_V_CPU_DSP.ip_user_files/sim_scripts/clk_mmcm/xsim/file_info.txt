@@ -1,0 +1,4 @@
+clk_mmcm.v,verilog,xil_defaultlib,../../../bd/clk_mmcm/sim/clk_mmcm.v,incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"
+clk_mmcm_clk_wiz_0_0_clk_wiz.v,verilog,xil_defaultlib,../../../bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0_clk_wiz.v,incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"
+clk_mmcm_clk_wiz_0_0.v,verilog,xil_defaultlib,../../../bd/clk_mmcm/ip/clk_mmcm_clk_wiz_0_0_3/clk_mmcm_clk_wiz_0_0.v,incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"incdir="../../../../RISC_V_CPU_DSP.gen/sources_1/bd/clk_mmcm/ipshared/3242"
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Sep 20 09:57:31 2024
+# Process ID: 9412
+# Current directory: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/vio_vio_0_0_synth_1
+# Command line: vivado.exe -log vio_vio_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_vio_0_0.tcl
+# Log file: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/vio_vio_0_0_synth_1/vio_vio_0_0.vds
+# Journal file: C:/Users/leand/Desktop/RISC_V_UNISA/RISC_V_CPU_DSP/RISC_V_CPU_DSP.runs/vio_vio_0_0_synth_1\vivado.jou
+# Running On        :leandrada08
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Apple Part 000 r0p0
+# CPU Frequency     :2000 MHz
+# CPU Physical cores:5
+# CPU Logical cores :5
+# Host memory       :8584 MB
+# Swap memory       :2684 MB
+# Total Virtual     :11268 MB
+# Available Virtual :2115 MB
+#-----------------------------------------------------------
+source vio_vio_0_0.tcl -notrace
