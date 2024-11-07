@@ -110,7 +110,7 @@
 **/RISC_V_ID/
 **/RISC_V_IF/
 **/RISC_V_MEM/
-
+**/RISC_V_CPU_DSP/
 
 ### Windows ###
 # Windows thumbnail cache files
